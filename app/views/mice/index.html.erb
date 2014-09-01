@@ -1,15 +1,12 @@
-<h1>Listing mice</h1>
-
-<table>
+<table class="table table_striped table-bordered">
   <thead>
     <tr>
-      <th>Number</th>
-      <th>Mating date</th>
-      <th>Dpc</th>
-      <th>Somites</th>
-      <th>Experiments</th>
-      <th>Notes</th>
-      <th>Belongs to</th>
+      <th>Mysz nr F1#</th>
+      <th>Data krycia</th>
+      <th>DPC</th>
+      <th>Somity</th>
+      <th>Doświadczenia</th>
+      <th>Uwagi</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,15 +20,14 @@
         <td><%= mouse.somites %></td>
         <td><%= mouse.experiments %></td>
         <td><%= mouse.notes %></td>
-        <td><%= mouse.belongs_to %></td>
-        <td><%= link_to 'Show', mouse %></td>
-        <td><%= link_to 'Edit', edit_mouse_path(mouse) %></td>
-        <td><%= link_to 'Destroy', mouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Szczegóły', mouse %></td>
+        <td><%= link_to 'Edytuj', edit_mouse_path(mouse) %></td>
+        <td><%= link_to 'Usuń', mouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br/>
 
-<%= link_to 'New Mouse', new_mouse_path %>
+<%= link_to 'Dodaj mysz', new_mouse_path, class: "btn btn-info btn-sm" %>

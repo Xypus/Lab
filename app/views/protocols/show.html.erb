@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @protocol.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @protocol.content %>
+</p>
+
+<%= link_to 'Edit', edit_protocol_path(@protocol) %> |
+<%= link_to 'Back', protocols_path %>

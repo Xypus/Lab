@@ -1,19 +1,9 @@
-<h1>Listing cultures</h1>
-
-<table>
+<table class="table table_striped table-bordered">
   <thead>
     <tr>
-      <th>Starting date</th>
-      <th>Termination date</th>
-      <th>Culture details</th>
-      <th>Schema 1</th>
-      <th>Schema 2</th>
-      <th>Schema 3</th>
-      <th>Schema 4</th>
-      <th>Schema 5</th>
-      <th>Schema 6</th>
-      <th>Schema 7</th>
-      <th>Schema 8</th>
+      <th>Data rozpoczęcia hodowli</th>
+      <th>Data zakończenia hodowli</th>
+      <th>Warunki hodowli</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,17 +14,9 @@
         <td><%= culture.starting_date %></td>
         <td><%= culture.termination_date %></td>
         <td><%= culture.culture_details %></td>
-        <td><%= culture.schema_1 %></td>
-        <td><%= culture.schema_2 %></td>
-        <td><%= culture.schema_3 %></td>
-        <td><%= culture.schema_4 %></td>
-        <td><%= culture.schema_5 %></td>
-        <td><%= culture.schema_6 %></td>
-        <td><%= culture.schema_7 %></td>
-        <td><%= culture.schema_8 %></td>
-        <td><%= link_to 'Show', culture %></td>
-        <td><%= link_to 'Edit', edit_culture_path(culture) %></td>
-        <td><%= link_to 'Destroy', culture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Szczegóły', culture %></td>
+        <td><%= link_to 'Edytuj', edit_culture_path(culture) %></td>
+        <td><%= link_to 'Usuń', culture, method: :delete, data: { confirm: 'Na pewno usunąć?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Culture', new_culture_path %>
+<%= link_to 'Nowa hodowla', new_culture_path, class: "btn btn-info btn-sm" %>
