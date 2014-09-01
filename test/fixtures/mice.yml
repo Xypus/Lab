@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  mating_date: MyString
+  dpc: MyString
+  somites: MyString
+  experiments: MyString
+  notes: MyText
+  belongs_to: 
+
+two:
+  number: 1
+  mating_date: MyString
+  dpc: MyString
+  somites: MyString
+  experiments: MyString
+  notes: MyText
+  belongs_to: 

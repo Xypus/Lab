@@ -1,0 +1,61 @@
+<%= form_for(@culture) do |f| %>
+  <% if @culture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@culture.errors.count, "error") %> prohibited this culture from being saved:</h2>
+
+      <ul>
+      <% @culture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :starting_date %><br>
+    <%= f.text_field :starting_date %>
+  </div>
+  <div class="field">
+    <%= f.label :termination_date %><br>
+    <%= f.text_field :termination_date %>
+  </div>
+  <div class="field">
+    <%= f.label :culture_details %><br>
+    <%= f.text_area :culture_details %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_1 %><br>
+    <%= f.text_field :schema_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_2 %><br>
+    <%= f.text_field :schema_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_3 %><br>
+    <%= f.text_field :schema_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_4 %><br>
+    <%= f.text_field :schema_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_5 %><br>
+    <%= f.text_field :schema_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_6 %><br>
+    <%= f.text_field :schema_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_7 %><br>
+    <%= f.text_field :schema_7 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_8 %><br>
+    <%= f.text_field :schema_8 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

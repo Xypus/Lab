@@ -1,0 +1,51 @@
+<h1>Listing stainings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Foetus</th>
+      <th>Staining date</th>
+      <th>Schema 1</th>
+      <th>Schema 2</th>
+      <th>Schema 3</th>
+      <th>Schema 4</th>
+      <th>Schema 5</th>
+      <th>Schema 6</th>
+      <th>Schema 7</th>
+      <th>Schema 8</th>
+      <th>Antibodies</th>
+      <th>Staining protocol</th>
+      <th>Results</th>
+      <th>Results file</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stainings.each do |staining| %>
+      <tr>
+        <td><%= staining.foetus %></td>
+        <td><%= staining.staining_date %></td>
+        <td><%= staining.schema_1 %></td>
+        <td><%= staining.schema_2 %></td>
+        <td><%= staining.schema_3 %></td>
+        <td><%= staining.schema_4 %></td>
+        <td><%= staining.schema_5 %></td>
+        <td><%= staining.schema_6 %></td>
+        <td><%= staining.schema_7 %></td>
+        <td><%= staining.schema_8 %></td>
+        <td><%= staining.antibodies %></td>
+        <td><%= staining.staining_protocol %></td>
+        <td><%= staining.results %></td>
+        <td><%= staining.results_file %></td>
+        <td><%= link_to 'Show', staining %></td>
+        <td><%= link_to 'Edit', edit_staining_path(staining) %></td>
+        <td><%= link_to 'Destroy', staining, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Staining', new_staining_path %>

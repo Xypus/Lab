@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @mouse.number %>
+</p>
+
+<p>
+  <strong>Mating date:</strong>
+  <%= @mouse.mating_date %>
+</p>
+
+<p>
+  <strong>Dpc:</strong>
+  <%= @mouse.dpc %>
+</p>
+
+<p>
+  <strong>Somites:</strong>
+  <%= @mouse.somites %>
+</p>
+
+<p>
+  <strong>Experiments:</strong>
+  <%= @mouse.experiments %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @mouse.notes %>
+</p>
+
+<p>
+  <strong>Belongs to:</strong>
+  <%= @mouse.belongs_to %>
+</p>
+
+<%= link_to 'Edit', edit_mouse_path(@mouse) %> |
+<%= link_to 'Back', mice_path %>

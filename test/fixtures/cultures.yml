@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starting_date: MyString
+  termination_date: MyString
+  culture_details: MyText
+  schema_1: MyString
+  schema_2: MyString
+  schema_3: MyString
+  schema_4: MyString
+  schema_5: MyString
+  schema_6: MyString
+  schema_7: MyString
+  schema_8: MyString
+
+two:
+  starting_date: MyString
+  termination_date: MyString
+  culture_details: MyText
+  schema_1: MyString
+  schema_2: MyString
+  schema_3: MyString
+  schema_4: MyString
+  schema_5: MyString
+  schema_6: MyString
+  schema_7: MyString
+  schema_8: MyString

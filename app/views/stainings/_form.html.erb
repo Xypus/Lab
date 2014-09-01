@@ -1,0 +1,73 @@
+<%= form_for(@staining) do |f| %>
+  <% if @staining.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@staining.errors.count, "error") %> prohibited this staining from being saved:</h2>
+
+      <ul>
+      <% @staining.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :foetus %><br>
+    <%= f.text_field :foetus %>
+  </div>
+  <div class="field">
+    <%= f.label :staining_date %><br>
+    <%= f.text_field :staining_date %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_1 %><br>
+    <%= f.text_field :schema_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_2 %><br>
+    <%= f.text_field :schema_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_3 %><br>
+    <%= f.text_field :schema_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_4 %><br>
+    <%= f.text_field :schema_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_5 %><br>
+    <%= f.text_field :schema_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_6 %><br>
+    <%= f.text_field :schema_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_7 %><br>
+    <%= f.text_field :schema_7 %>
+  </div>
+  <div class="field">
+    <%= f.label :schema_8 %><br>
+    <%= f.text_field :schema_8 %>
+  </div>
+  <div class="field">
+    <%= f.label :antibodies %><br>
+    <%= f.text_field :antibodies %>
+  </div>
+  <div class="field">
+    <%= f.label :staining_protocol %><br>
+    <%= f.text_area :staining_protocol %>
+  </div>
+  <div class="field">
+    <%= f.label :results %><br>
+    <%= f.text_field :results %>
+  </div>
+  <div class="field">
+    <%= f.label :results_file %><br>
+    <%= f.text_field :results_file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

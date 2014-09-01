@@ -1,0 +1,37 @@
+<h1>Listing mice</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Mating date</th>
+      <th>Dpc</th>
+      <th>Somites</th>
+      <th>Experiments</th>
+      <th>Notes</th>
+      <th>Belongs to</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mice.each do |mouse| %>
+      <tr>
+        <td><%= mouse.number %></td>
+        <td><%= mouse.mating_date %></td>
+        <td><%= mouse.dpc %></td>
+        <td><%= mouse.somites %></td>
+        <td><%= mouse.experiments %></td>
+        <td><%= mouse.notes %></td>
+        <td><%= mouse.belongs_to %></td>
+        <td><%= link_to 'Show', mouse %></td>
+        <td><%= link_to 'Edit', edit_mouse_path(mouse) %></td>
+        <td><%= link_to 'Destroy', mouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mouse', new_mouse_path %>
