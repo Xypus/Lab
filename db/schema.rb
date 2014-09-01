@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901103639) do
+ActiveRecord::Schema.define(version: 20140901104301) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140901103639) do
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "culture_id"
   end
 
   create_table "stainings", force: true do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140901103639) do
     t.string   "results_file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "mouse_id"
   end
 
 end
