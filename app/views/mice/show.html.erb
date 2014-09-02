@@ -1,34 +1,61 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Numer myszy:</strong>
-  <%= @mouse.number %>
-</p>
-
-<p>
-  <strong>Data krycia:</strong>
-  <%= @mouse.mating_date %>
-</p>
-
-<p>
-  <strong>DPC:</strong>
-  <%= @mouse.dpc %>
-</p>
-
-<p>
-  <strong>Somity:</strong>
-  <%= @mouse.somites %>
-</p>
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-striped table-bordered">
+        <tbody>
+          <tr>
+            <td><strong>Numer myszy:</strong></td>
+            <td><%= @mouse.number %></td>
+          </tr>
+          <tr>
+            <td><strong>Data krycia:</strong></td>
+            <td><%= @mouse.mating_date %></td>
+          </tr>
+          <tr>
+            <td><strong>DPC:</strong></td>
+            <td><%= @mouse.dpc %></td>
+          </tr>
+          <tr>
+            <td><strong>Somity:</strong></td>
+            <td><%= @mouse.somites %></td>
+          </tr>
+          <tr>
+            <td><strong>Doświadczenia:</strong></td>
+            <td>
+              <table class="table table-striped table-bordered">
+                <tr>
+                  <td><strong>Barwienia</strong></td>
+                  <td>Data</td>
+                  <td>Przeciwciała</td>
+                  <td><strong>Hodowle</strong></td>
+                  <td>Data</td>
+                </tr>
+                <tr>
+                  <td>asdas</td>
+                  <td>asdasd</td>
+                  <td>asdas</td>
+                  <td>asdas</td>
+                  <td>asdasd</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Uwagi:</strong></td>
+            <td><%= @mouse.notes %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  
 <p>
   <strong>Doświadczenia:</strong>
   <%= @mouse.experiments %>
 </p>
 
-<p>
-  <strong>Uwagi:</strong>
-  <%= @mouse.notes %>
-</p>
 
-<%= link_to 'Edytuj', edit_mouse_path(@mouse) %> |
-<%= link_to 'Wróć', mice_path %>
+<%= link_to 'Edytuj', edit_mouse_path(@mouse), class: "btn btn-warning btn-sm" %>
+<%= link_to 'Wróć', mice_path, class: "btn btn-info btn-sm" %>

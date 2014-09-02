@@ -4,7 +4,7 @@ class MiceController < ApplicationController
   # GET /mice
   # GET /mice.json
   def index
-    @mice = Mouse.all
+    @mice = Mouse.all.order("number DESC")
   end
 
   # GET /mice/1

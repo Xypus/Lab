@@ -2,12 +2,8 @@
   <thead>
     <tr>
       <th>Mysz nr F1#</th>
-      <th>Data krycia</th>
-      <th>DPC</th>
-      <th>Somity</th>
       <th>Doświadczenia</th>
-      <th>Uwagi</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -15,14 +11,10 @@
     <% @mice.each do |mouse| %>
       <tr>
         <td><%= mouse.number %></td>
-        <td><%= mouse.mating_date %></td>
-        <td><%= mouse.dpc %></td>
-        <td><%= mouse.somites %></td>
         <td><%= mouse.experiments %></td>
-        <td><%= mouse.notes %></td>
-        <td><%= link_to 'Szczegóły', mouse %></td>
-        <td><%= link_to 'Edytuj', edit_mouse_path(mouse) %></td>
-        <td><%= link_to 'Usuń', mouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Szczegóły', mouse, class: "btn btn-info btn-xs"  %>
+        <%= link_to 'Edytuj', edit_mouse_path(mouse), class: "btn btn-warning btn-xs"  %>
+       <%= link_to 'Usuń', mouse, method: :delete, data: { confirm: 'Czy na pewno?' }, class: "btn btn-danger btn-xs"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +22,4 @@
 
 <br/>
 
-<%= link_to 'Dodaj mysz', new_mouse_path, class: "btn btn-info btn-sm" %>
+<%= link_to 'Dodaj mysz', new_mouse_path, class: "btn btn-primary btn-sm" %>

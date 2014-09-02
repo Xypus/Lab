@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901135623) do
+ActiveRecord::Schema.define(version: 20140902073652) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20140901135623) do
   create_table "mice", force: true do |t|
     t.integer  "number"
     t.string   "mating_date"
-    t.string   "dpc"
-    t.string   "somites"
+    t.decimal  "dpc"
+    t.integer  "somites",     limit: 255
     t.string   "experiments"
     t.text     "notes"
     t.datetime "created_at"
