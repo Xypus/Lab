@@ -27,7 +27,7 @@ class StainingsController < ApplicationController
     @staining = Staining.new(staining_params)
 
     respond_to do |format|
-      if @staining.save
+      if @staining.save!
         format.html { redirect_to @staining, notice: 'Staining was successfully created.' }
         format.json { render :show, status: :created, location: @staining }
       else
@@ -69,6 +69,8 @@ class StainingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def staining_params
-      params.require(:staining).permit(:foetus, :staining_date, :schema_1, :schema_2, :schema_3, :schema_4, :schema_5, :schema_6, :schema_7, :schema_8, :antibodies, :staining_protocol, :results, :results_file)
+      params.require(:staining).permit(:foetus, :staining_date, :schema_1, :schema_2, 
+        :schema_3, :schema_4, :schema_5, :schema_6, :schema_7, :schema_8, :antibodies, 
+        :staining_protocol, :results, :results_file, :culture_id, :protocol_id, :material_preparation)
     end
 end

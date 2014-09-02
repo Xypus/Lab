@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902073652) do
+ActiveRecord::Schema.define(version: 20140902142552) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -65,7 +65,9 @@ ActiveRecord::Schema.define(version: 20140902073652) do
     t.string   "results_file"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "mouse_id"
+    t.text     "material_preparation"
+    t.integer  "protocol_id"
+    t.integer  "culture_id"
   end
 
 end

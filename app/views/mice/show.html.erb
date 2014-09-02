@@ -34,7 +34,7 @@
                   <td>asdas</td>
                   <td>asdasd</td>
                   <td>asdas</td>
-                  <td><%= link_to @mouse.culture.starting_date, culture_path %></td>
+                  <td><%= link_to @mouse.culture.starting_date, culture_path(@mouse.culture.id) %></td>
                 </tr>
               </table>
             </td>
@@ -49,11 +49,6 @@
   </div>
 </div>
   
-<p>
-  <strong>Doświadczenia:</strong>
-  <%= @mouse.experiments %>
-</p>
-
 
 <%= link_to 'Edytuj', edit_mouse_path(@mouse), class: "btn btn-warning btn-sm" %>
 <%= link_to 'Wróć', mice_path, class: "btn btn-info btn-sm" %>

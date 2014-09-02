@@ -1,29 +1,36 @@
-<table class="table table_striped table-bordered">
-  <thead>
-    <tr>
-      <th>Numer myszy</th>
-      <th>Zarodek</th>
-      <th>Data barwienia</th>
-      <th>Przeciwciała</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-striped table-bordered table-condensed">
+        <thead>
+          <tr>
+            <th>Numer myszy</th>
+            <th>Zarodek</th>
+            <th>Data barwienia</th>
+            <th>Przygotowanie materiału</th>
+            <th>Przeciwciała</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @stainings.each do |staining| %>
-      <tr>
-        <td><%= staining.mouse %></td>
-        <td><%= staining.foetus %></td>
-        <td><%= staining.staining_date %></td>
-        <td><%= staining.antibodies %></td>
-        <td><%= link_to 'Szczegóły', staining %></td>
-        <td><%= link_to 'Edytuj', edit_staining_path(staining) %></td>
-        <td><%= link_to 'Usuń', staining, method: :delete, data: { confirm: 'Na pewno usunąć?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        <tbody>
+          <% @stainings.each do |staining| %>
+            <tr>
+              <td><%= staining.culture.mouse.number %></td>
+              <td><%= staining.foetus %></td>
+              <td><%= staining.staining_date %></td>
+              <td><%= staining.material_preparation %></td>
+              <td><%= staining.antibodies %></td>
+              <td><%= link_to 'Szczegóły', staining, class: "btn btn-info btn-xs" %>
+              <td><%= link_to 'Edytuj', edit_staining_path(staining), class: "btn btn-warning btn-xs" %>
+                  <%= link_to 'Usuń', staining, method: :delete, data: { confirm: 'Na pewno usunąć?', class: "btn btn-danger btn-xs" } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 <br>
 
-<%= link_to 'Nowe barwienie', new_staining_path, class: "btn btn-info btn-sm" %>
+<%= link_to 'Nowe barwienie', new_staining_path, class: "btn btn-primary btn-sm" %>

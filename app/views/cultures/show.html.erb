@@ -1,66 +1,36 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-striped table-bordered">
+        <tbody>
+          <tr>
+            <td><strong>Numer myszy:</strong></td>
+            <td>
+              <% @culture.mice.each do |m| %>
+                <%= link_to m.number, mouse_path(m) %>&nbsp;&nbsp;&nbsp;
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Data rozpoczęcia:</strong></td>
+            <td><%= @culture.starting_date %></td>
+          </tr>
+          <tr>
+            <td><strong>Data zakończenia:</strong></td>
+            <td><%= @culture.termination_date %></td>
+          </tr>
+          <tr>
+            <td><strong>Warunki hodowli:</strong></td>
+            <td><%= @culture.culture_details %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Numer myszy:</strong>
-  <% @culture.mice.each do |m| %>
-  <p><%= link_to m.number, mouse_path %></p>
-  <% end %>
-</p>
 
-<p>
-  <strong>Data rozpoczęcia:</strong>
-  <%= @culture.starting_date %>
-</p>
 
-<p>
-  <strong>Data zakończenia:</strong>
-  <%= @culture.termination_date %>
-</p>
-
-<p>
-  <strong>Warunki hodowli:</strong>
-  <%= @culture.culture_details %>
-</p>
-
-<p>
-  <strong>Schema 1:</strong>
-  <%= @culture.schema_1 %>
-</p>
-
-<p>
-  <strong>Schema 2:</strong>
-  <%= @culture.schema_2 %>
-</p>
-
-<p>
-  <strong>Schema 3:</strong>
-  <%= @culture.schema_3 %>
-</p>
-
-<p>
-  <strong>Schema 4:</strong>
-  <%= @culture.schema_4 %>
-</p>
-
-<p>
-  <strong>Schema 5:</strong>
-  <%= @culture.schema_5 %>
-</p>
-
-<p>
-  <strong>Schema 6:</strong>
-  <%= @culture.schema_6 %>
-</p>
-
-<p>
-  <strong>Schema 7:</strong>
-  <%= @culture.schema_7 %>
-</p>
-
-<p>
-  <strong>Schema 8:</strong>
-  <%= @culture.schema_8 %>
-</p>
-
-<%= link_to 'Edit', edit_culture_path(@culture) %> |
-<%= link_to 'Back', cultures_path %>
+<%= link_to 'Edytuj', edit_culture_path(@culture), class: "btn btn-warning btn-sm" %>
+<%= link_to 'Powrót', cultures_path, class: "btn btn-info btn-sm" %>
