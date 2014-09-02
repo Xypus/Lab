@@ -69,6 +69,8 @@ class CulturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def culture_params
-      params.require(:culture).permit(:starting_date, :termination_date, :culture_details, :schema_1, :schema_2, :schema_3, :schema_4, :schema_5, :schema_6, :schema_7, :schema_8)
+      params.require(:culture).permit(:starting_date, :termination_date, :culture_details, 
+          :schema_1, :schema_2, :schema_3, :schema_4, :schema_5, :schema_6, :schema_7, 
+          :schema_8, :mouse_ids => [])
     end
 end

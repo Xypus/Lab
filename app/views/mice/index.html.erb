@@ -1,24 +1,30 @@
-<table class="table table_striped table-bordered">
-  <thead>
-    <tr>
-      <th>Mysz nr F1#</th>
-      <th>Doświadczenia</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-striped table-bordered table-condensed">
+        <thead>
+          <tr>
+            <th>Mysz nr F1#</th>
+            <th>Doświadczenia</th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @mice.each do |mouse| %>
-      <tr>
-        <td><%= mouse.number %></td>
-        <td><%= mouse.experiments %></td>
-        <td><%= link_to 'Szczegóły', mouse, class: "btn btn-info btn-xs"  %>
-        <%= link_to 'Edytuj', edit_mouse_path(mouse), class: "btn btn-warning btn-xs"  %>
-       <%= link_to 'Usuń', mouse, method: :delete, data: { confirm: 'Czy na pewno?' }, class: "btn btn-danger btn-xs"  %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @mice.each do |mouse| %>
+            <tr>
+              <td><%= mouse.number %></td>
+              <td><%= mouse.experiments %></td>
+              <td><%= link_to 'Szczegóły', mouse, class: "btn btn-info btn-xs"  %>
+              <%= link_to 'Edytuj', edit_mouse_path(mouse), class: "btn btn-warning btn-xs"  %>
+             <%= link_to 'Usuń', mouse, method: :delete, data: { confirm: 'Czy na pewno?' }, class: "btn btn-danger btn-xs"  %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <br/>
 

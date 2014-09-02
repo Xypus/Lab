@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+=begin
 Mouse.create(number: 703, mating_date: "12.08.2014", dpc: 9.5, somites: 25, 
   experiments: "hodowla, barwienie")
 Mouse.create(number: 667, mating_date: "25.06.2014", dpc: 9.5, somites: 24, 
@@ -17,3 +18,7 @@ Mouse.create(number: 669, mating_date: "25.06.2014", dpc: 9.5, somites: 24,
   experiments: "hodowla, barwienie")
 Mouse.create(number: 611, mating_date: "12.04.2014", dpc: 9.5, somites: nil, 
   experiments: "hodowla, barwienie")
+=end
+
+  Culture.create(mouse_number: , starting_date: , termination_date: , culture_details: ,  )
+  Culture.create(mouse_number: , starting_date: , termination_date: , culture_details: ,  )

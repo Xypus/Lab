@@ -39,4 +39,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
-
+gem 'simple_form'

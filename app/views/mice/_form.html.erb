@@ -1,41 +1,9 @@
-<%= form_for(@mouse) do |f| %>
-  <% if @mouse.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@mouse.errors.count, "error") %> prohibited this mouse from being saved:</h2>
-
-      <ul>
-      <% @mouse.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :mating_date %><br>
-    <%= f.text_field :mating_date %>
-  </div>
-  <div class="field">
-    <%= f.label :dpc %><br>
-    <%= f.text_field :dpc %>
-  </div>
-  <div class="field">
-    <%= f.label :somites %><br>
-    <%= f.text_field :somites %>
-  </div>
-  <div class="field">
-    <%= f.label :experiments %><br>
-    <%= f.text_field :experiments %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for @mouse do |f| %>
+<%= f.input :number, label: "Numer myszy" %>
+<%= f.input :mating_date, label: "Data krycia" %>
+<%= f.input :dpc, label: "DPC" %>
+<%= f.input :somites, label: "Somity" %>
+<%= f.input :experiments, label: "Doświadczenia" %>
+<%= f.input :notes, label: "Uwagi" %>
+<%= f.button :submit, "Dodaj mysz", class: "btn btn-info btn-xs" %>
 <% end %>

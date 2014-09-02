@@ -1,17 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Starting date:</strong>
+  <strong>Numer myszy:</strong>
+  <% @culture.mice.each do |m| %>
+  <p><%= link_to m.number, mouse_path %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Data rozpoczęcia:</strong>
   <%= @culture.starting_date %>
 </p>
 
 <p>
-  <strong>Termination date:</strong>
+  <strong>Data zakończenia:</strong>
   <%= @culture.termination_date %>
 </p>
 
 <p>
-  <strong>Culture details:</strong>
+  <strong>Warunki hodowli:</strong>
   <%= @culture.culture_details %>
 </p>
 
