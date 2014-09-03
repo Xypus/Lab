@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :protocols
 
-  resources :stainings
+  resources :stainings do
+    member do
+      get :download
+    end
+  end
 
   resources :cultures
 

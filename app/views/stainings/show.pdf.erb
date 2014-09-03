@@ -30,7 +30,7 @@
           </tr>
           <tr>
             <td><strong>Protokół:</strong></td>
-            <td><%= simple_format(@staining.protocol.content) %></td>
+            <td><%= simple_format @staining.protocol.content %></td>
           </tr>
           <tr>
             <td><strong>Wyniki:</strong></td>
@@ -46,8 +46,3 @@
   </div>
 </div>
 
-
-<%= link_to 'Edytuj', edit_staining_path(@staining), class: "btn btn-warning btn-sm"  %>
-<%= link_to 'Usuń', @staining, method: :delete, data: { confirm: 'Czy na pewno?' }, class: "btn btn-danger btn-sm" %>
-<%= link_to 'Powrót', stainings_path, class: "btn btn-info btn-sm" %>
-<%= link_to 'Zapisz do PDF', download_staining_path(@staining), class: "btn btn-default btn-sm" %>

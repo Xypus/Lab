@@ -10,6 +10,27 @@ class StainingsController < ApplicationController
   # GET /stainings/1
   # GET /stainings/1.json
   def show
+    @staining = Staining.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  :pdf   => "Barwienie_#{@staining.staining_date}",
+          :disposition => "inline",
+          :template    => "stainings/show.pdf.erb",
+          :encoding    => "UTF-8",
+          :layout      => "pdf_layout.html.erb"
+      end
+    end
+  end
+
+  def download
+    @staining = Staining.find(params[:id])
+    html = render_to_string(:action => :show, 
+      :layout   => "pdf_layout.html")
+    pdf = WickedPdf.new.pdf_from_string(html)
+    send_data(pdf,
+    :filename => "Barwienie_#{@staining.staining_date}.pdf",
+    :disposition => 'attachment')
   end
 
   # GET /stainings/new
