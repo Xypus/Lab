@@ -17,9 +17,7 @@
                   <%= m.number %> 
                   <% end %></td>
               <td><%= culture.starting_date %></td>
-              <td><%= link_to 'Szczegóły', culture, class: "btn btn-info btn-xs" %>
-                  <%= link_to 'Edytuj', edit_culture_path(culture), class: "btn btn-warning btn-xs" %>
-                  <%= link_to 'Usuń', culture, method: :delete, data: { confirm: 'Na pewno usunąć?' }, class: "btn btn-danger btn-xs"  %></td>
+              <td><%= link_to 'Szczegóły', culture, class: "btn btn-info btn-xs" %></td>
             </tr>
           <% end %>
         </tbody>

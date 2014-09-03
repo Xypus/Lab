@@ -1,10 +1,9 @@
 <%= simple_form_for @staining do |f| %>
-<%= f.association :culture, label_method: :mice_number, label: "Myszy" %>
+<%= f.association :mice, label_method: :number, label_value: :id, label: "Myszy" %>
 <%= f.input       :foetus, label: "Zarodek" %>
 <%= f.input       :staining_date, label: "Data barwienia" %>
 <%= f.input       :material_preparation, label: "Przygotowanie materiału" %>
-<%= f.association :protocol, label_method: :title, label: "Protokoły" %>
-<%= f.input       :antibodies, label: "Przeciwciała" %>
+<%= f.association :protocol, label_method: :title, label: "Przeciwciała" %>
 <%= f.input       :results, label: "Wyniki" %>
 <%= f.input       :results_file, label: "Plik z wynikami" %>
 <%= f.button      :submit, "Zapisz barwienie", class: "btn btn-info btn-xs" %>

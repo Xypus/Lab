@@ -15,9 +15,7 @@
             <tr>
               <td><%= mouse.number %></td>
               <td><%= mouse.experiments %></td>
-              <td><%= link_to 'Szczegóły', mouse, class: "btn btn-info btn-xs"  %>
-              <%= link_to 'Edytuj', edit_mouse_path(mouse), class: "btn btn-warning btn-xs"  %>
-             <%= link_to 'Usuń', mouse, method: :delete, data: { confirm: 'Czy na pewno?' }, class: "btn btn-danger btn-xs"  %></td>
+              <td><%= link_to 'Szczegóły', mouse, class: "btn btn-info btn-xs"  %></td>
             </tr>
           <% end %>
         </tbody>

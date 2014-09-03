@@ -5,8 +5,9 @@
 
 <p>
   <strong>Protokół:</strong>
-  <%= @protocol.content %>
+  <%= simple_format @protocol.content %>
 </p>
 
 <%= link_to 'Edytuj', edit_protocol_path(@protocol), class: "btn btn-warning btn-sm" %> 
+<%= link_to 'Usuń', @protocol, method: :delete, data: { confirm: 'Czy na pewno?' }, class: "btn btn-danger btn-sm" %>
 <%= link_to 'Powrót', protocols_path, class: "btn btn-info btn-sm" %>

@@ -26,15 +26,17 @@
               <table class="table table-striped table-bordered">
                 <tr>
                   <td><strong>Barwienia</strong></td>
-                  <td>Data</td>
                   <td>Przeciwciała</td>
                   <td><strong>Hodowla</strong></td>
                 </tr>
                 <tr>
-                  <td>asdas</td>
-                  <td>asdasd</td>
-                  <td>asdas</td>
-                  <td><%= link_to @mouse.culture.starting_date, culture_path(@mouse.culture.id) %></td>
+                <td>
+                  <% @mouse.stainings.each do |s| %>
+                    <%= link_if(s) %><br />&nbsp;
+                </td>
+                <td><%= s.protocol.title %>&nbsp;</td>
+                <% end %>                
+                <td><%= link_if(@mouse.culture) %>&nbsp;</td>
                 </tr>
               </table>
             </td>
@@ -51,4 +53,5 @@
   
 
 <%= link_to 'Edytuj', edit_mouse_path(@mouse), class: "btn btn-warning btn-sm" %>
+<%= link_to 'Usuń', @mouse, method: :delete, data: { confirm: 'Czy na pewno?' }, class: "btn btn-danger btn-sm" %>
 <%= link_to 'Wróć', mice_path, class: "btn btn-info btn-sm" %>

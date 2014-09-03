@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mouse_id: 
+  staining_id: 
+
+two:
+  mouse_id: 
+  staining_id: 

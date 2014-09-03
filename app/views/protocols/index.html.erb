@@ -13,9 +13,7 @@
           <% @protocols.each do |protocol| %>
             <tr>
               <td><%= protocol.title %></td>
-              <td><%= link_to 'Szczegóły', protocol, class: "btn btn-info btn-xs" %>
-                  <%= link_to 'Edytuj', edit_protocol_path(protocol), class: "btn btn-warning btn-xs" %>
-                  <%= link_to 'Usuń', protocol, method: :delete, data: { confirm: 'Na pewno usunąć?' }, class: "btn btn-danger btn-xs" %></td>
+              <td><%= link_to 'Szczegóły', protocol, class: "btn btn-info btn-xs" %></td>
             </tr>
           <% end %>
         </tbody>

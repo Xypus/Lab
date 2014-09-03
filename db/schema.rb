@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902142552) do
+ActiveRecord::Schema.define(version: 20140903090700) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20140902142552) do
     t.datetime "updated_at"
     t.integer  "culture_id"
   end
+
+  create_table "mouse_stainings", force: true do |t|
+    t.integer  "mouse_id"
+    t.integer  "staining_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mouse_stainings", ["mouse_id"], name: "index_mouse_stainings_on_mouse_id"
+  add_index "mouse_stainings", ["staining_id"], name: "index_mouse_stainings_on_staining_id"
 
   create_table "protocols", force: true do |t|
     t.string   "title"
