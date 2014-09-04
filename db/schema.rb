@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903090700) do
+ActiveRecord::Schema.define(version: 20140904074416) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140903090700) do
     t.text     "material_preparation"
     t.integer  "protocol_id"
     t.integer  "culture_id"
+    t.text     "protocol_text"
   end
 
 end

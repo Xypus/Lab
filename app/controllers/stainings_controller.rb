@@ -26,7 +26,8 @@ class StainingsController < ApplicationController
   def download
     @staining = Staining.find(params[:id])
     html = render_to_string(:action => :show, 
-      :layout   => "pdf_layout.html")
+      :layout   => "pdf_layout.html", 
+      :template => "stainings/show.pdf.erb")
     pdf = WickedPdf.new.pdf_from_string(html)
     send_data(pdf,
     :filename => "Barwienie_#{@staining.staining_date}.pdf",
@@ -36,6 +37,7 @@ class StainingsController < ApplicationController
   # GET /stainings/new
   def new
     @staining = Staining.new
+    @protocols = Protocol.all.map { |p| [p.id, p.content]}.to_h
   end
 
   # GET /stainings/1/edit
@@ -49,7 +51,7 @@ class StainingsController < ApplicationController
 
     respond_to do |format|
       if @staining.save!
-        format.html { redirect_to @staining, notice: 'Staining was successfully created.' }
+        format.html { redirect_to @staining, notice: 'Utworzono nowe barwienie.' }
         format.json { render :show, status: :created, location: @staining }
       else
         format.html { render :new }
@@ -63,7 +65,7 @@ class StainingsController < ApplicationController
   def update
     respond_to do |format|
       if @staining.update(staining_params)
-        format.html { redirect_to @staining, notice: 'Staining was successfully updated.' }
+        format.html { redirect_to @staining, notice: 'Edycja zakończona powodzeniem.' }
         format.json { render :show, status: :ok, location: @staining }
       else
         format.html { render :edit }
@@ -92,7 +94,7 @@ class StainingsController < ApplicationController
     def staining_params
       params.require(:staining).permit(:foetus, :staining_date, :schema_1, :schema_2, 
         :schema_3, :schema_4, :schema_5, :schema_6, :schema_7, :schema_8, :antibodies, 
-        :staining_protocol, :results, :results_file, :culture_id, :protocol_id, 
+        :staining_protocol, :results, :results_file, :culture_id, :protocol_id, :protocol_text,
         :material_preparation, :mouse_ids => [])
     end
 end

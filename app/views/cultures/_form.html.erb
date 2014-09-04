@@ -2,7 +2,7 @@
 <%= f.association :mice, label_method: :number, value_method: :id, label: "Numery myszy", hint: "Wciśnij ctrl, aby wybrać więcej niż jedną mysz" %>
 <%= f.input :starting_date, label: "Data rozpoczęcia" %>
 <%= f.input :termination_date, label: "Data zakończenia" %>
-<%= f.input :culture_details, label: "Warunki hodowli" %>
+<%= f.input :culture_details, label: "Warunki hodowli", as: :text %>
 
 <%= f.button :submit, "Zapisz hodowlę", class: "btn btn-info btn-xs" %>
 <% end %>
