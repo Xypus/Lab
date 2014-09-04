@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
+  p7: MyString
+  p8: MyString
+  plateable_id: 
+
+two:
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
+  p7: MyString
+  p8: MyString
+  plateable_id: 

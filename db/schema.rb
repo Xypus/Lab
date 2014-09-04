@@ -11,20 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904074416) do
+ActiveRecord::Schema.define(version: 20140904131130) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
     t.string   "termination_date"
     t.text     "culture_details"
-    t.string   "schema_1"
-    t.string   "schema_2"
-    t.string   "schema_3"
-    t.string   "schema_4"
-    t.string   "schema_5"
-    t.string   "schema_6"
-    t.string   "schema_7"
-    t.string   "schema_8"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,6 +43,21 @@ ActiveRecord::Schema.define(version: 20140904074416) do
   add_index "mouse_stainings", ["mouse_id"], name: "index_mouse_stainings_on_mouse_id"
   add_index "mouse_stainings", ["staining_id"], name: "index_mouse_stainings_on_staining_id"
 
+  create_table "plates", force: true do |t|
+    t.string   "p1"
+    t.string   "p2"
+    t.string   "p3"
+    t.string   "p4"
+    t.string   "p5"
+    t.string   "p6"
+    t.string   "p7"
+    t.string   "p8"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "plateable_id"
+    t.string   "plateable_type"
+  end
+
   create_table "protocols", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -61,14 +68,6 @@ ActiveRecord::Schema.define(version: 20140904074416) do
   create_table "stainings", force: true do |t|
     t.string   "foetus"
     t.string   "staining_date"
-    t.string   "schema_1"
-    t.string   "schema_2"
-    t.string   "schema_3"
-    t.string   "schema_4"
-    t.string   "schema_5"
-    t.string   "schema_6"
-    t.string   "schema_7"
-    t.string   "schema_8"
     t.string   "antibodies"
     t.text     "staining_protocol"
     t.string   "results"

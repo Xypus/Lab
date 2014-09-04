@@ -38,6 +38,7 @@ class StainingsController < ApplicationController
   def new
     @staining = Staining.new
     @protocols = Protocol.all.map { |p| [p.id, p.content]}.to_h
+    @plate = @staining.build_plate
   end
 
   # GET /stainings/1/edit
@@ -47,15 +48,20 @@ class StainingsController < ApplicationController
   # POST /stainings
   # POST /stainings.json
   def create
-    @staining = Staining.new(staining_params)
+    Staining.transaction do
+      @staining = Staining.new(staining_params)
+      @staining.plate = @staining.create_plate(plate_params[:plate])
 
-    respond_to do |format|
-      if @staining.save!
-        format.html { redirect_to @staining, notice: 'Utworzono nowe barwienie.' }
-        format.json { render :show, status: :created, location: @staining }
-      else
-        format.html { render :new }
-        format.json { render json: @staining.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @staining.save
+          format.html { redirect_to @staining, notice: 'Utworzono nowe barwienie.' }
+          format.json { render :show, status: :created, location: @staining }
+        else
+          @protocols = Protocol.all.map { |p| [p.id, p.content]}.to_h
+          @plate = @staining.build_plate
+          format.html { render :new }
+          format.json { render json: @staining.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -79,7 +85,7 @@ class StainingsController < ApplicationController
   def destroy
     @staining.destroy
     respond_to do |format|
-      format.html { redirect_to stainings_url, notice: 'Staining was successfully destroyed.' }
+      format.html { redirect_to stainings_url, notice: 'Barwienie usunięte.' }
       format.json { head :no_content }
     end
   end
@@ -92,9 +98,15 @@ class StainingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def staining_params
-      params.require(:staining).permit(:foetus, :staining_date, :schema_1, :schema_2, 
-        :schema_3, :schema_4, :schema_5, :schema_6, :schema_7, :schema_8, :antibodies, 
+      params.require(:staining).permit(:foetus, :staining_date, :antibodies, 
         :staining_protocol, :results, :results_file, :culture_id, :protocol_id, :protocol_text,
-        :material_preparation, :mouse_ids => [])
+        :material_preparation, :plateable_id, :plateable_type, :plate_attributes,
+         :mouse_ids => [])
+    end
+
+    def plate_params
+      #raise params[:plate_attributes]
+      params.require(:staining).permit(:plate => [:p1, :p2, :p3])
+
     end
 end

@@ -24,7 +24,7 @@
               <td><%= staining.foetus %></td>
               <td><%= staining.staining_date %></td>
               <td><%= staining.material_preparation %></td>
-              <td><%= staining.protocol.title %></td>
+              <td><%= staining.protocol.try(:title) %></td>
               <td><%= link_to 'Szczegóły', staining, class: "btn btn-info btn-xs" %></td>
             </tr>
           <% end %>

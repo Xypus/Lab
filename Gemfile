@@ -36,7 +36,7 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 #gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'simple_form', '~>3.1.0.rc1'
