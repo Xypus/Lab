@@ -25,10 +25,27 @@
             <td><%= @staining.material_preparation %></td>
           </tr>
           <tr>
-            <td><strong>Płytka</strong><tr></td>
-            <td>P1 <%= @staining.plate.p1 %></td>
-            <td>P2 <%= @staining.plate.p2 %></td>
-            <td>P3 <%= @staining.plate.p3 %></td>
+            <td><strong>Płytka</strong></td>
+              <td>
+                <table class="table table-striped table-bordered">
+                  <tbody>
+                    <tr>
+                      <td rowspan="2">NUMER<%= @staining.plate.try(:plate_number) %></td>
+                      <td>P1 <%= @staining.plate.try(:p1) %></td>
+                      <td>P2 <%= @staining.plate.try(:p2) %></td>
+                      <td>P3 <%= @staining.plate.try(:p3) %></td>
+                      <td>P4 <%= @staining.plate.try(:p4) %></td>
+                    </tr>
+                    <tr>
+                      <td>P5 <%= @staining.plate.try(:p5) %></td>
+                      <td>P6 <%= @staining.plate.try(:p6) %></td>
+                      <td>P7 <%= @staining.plate.try(:p7) %></td>
+                      <td>P8 <%= @staining.plate.try(:p8) %></td>
+                    <tr>
+                  </tbody>
+                </table>
+              </td>
+          </tr>
           <tr>
             <td><strong>Przeciwciała:</strong></td>
             <td><%= @staining.protocol.title %></td>

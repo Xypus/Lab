@@ -6,12 +6,26 @@
         label: "Przygotowanie materiału", 
         as: :text,  
         input_html: {rows: 5} %>
+<table class="table table-striped table-bordered">
+  <tbody>
+    <tr>
+      <%= f.simple_fields_for @plate do |p| %>
+      <td rowspan="2"><%= p.input :plate_number, label: "Numer płytki" %></td>
+      <td><%= p.input :p1, label: "p1" %></td>
+      <td><%= p.input :p2, label: "p2" %></td>
+      <td><%= p.input :p2, label: "p2" %></td>
+      <td><%= p.input :p2, label: "p2" %></td>
+    </tr>
+    <tr>
+      <td><%= p.input :p2, label: "p2" %></td>
+      <td><%= p.input :p2, label: "p2" %></td>
+      <td><%= p.input :p2, label: "p2" %></td>
+      <td><%= p.input :p2, label: "p2" %></td>
+      <% end %>
+    <tr>
+  </tbody>
+</table>
 <%= f.association :protocol, label_method: :title, label: "Przeciwciała" %>
-<%= f.simple_fields_for @plate do |p| %>
-  <%= p.input :p1, label: "p1" %>
-  <%= p.input :p2, label: "p2" %>
-  <%= p.input :p3, label: "p3" %>
-  <% end %>
 <%= f.input       :protocol_text, label: "Protokół", input_html: {rows: 10} %>
 <%= f.input       :results, label: "Wyniki", as: :text, input_html: {rows: 10} %>
 <%= f.input       :results_file, label: "Plik z wynikami" %>

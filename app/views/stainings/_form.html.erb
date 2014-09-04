@@ -2,10 +2,18 @@
 <%= f.association :mice, label_method: :number, label_value: :id, label: "Myszy" %>
 <%= f.input       :foetus, label: "Zarodek" %>
 <%= f.input       :staining_date, label: "Data barwienia" %>
-<%= f.input       :material_preparation, label: "Przygotowanie materiału" %>
+<%= f.input       :material_preparation, label: "Przygotowanie materiału",
+                  as: :text,  
+                  input_html: {rows: 5}  %>
+<%= f.simple_fields_for @plate do |p| %>
+  <%= p.input :plate_number, label: "Numer" %>
+  <%= p.input :p1, label: "p1" %>
+  <%= p.input :p2, label: "p2" %>
+  <%= p.input :p3, label: "p3" %>
+  <% end %>
 <%= f.association :protocol, label_method: :title, label: "Przeciwciała" %>
-<%= f.input       :protocol_text, label: "Protokół" %>
-<%= f.input       :results, label: "Wyniki" %>
+<%= f.input       :protocol_text, label: "Protokół", input_html: {rows: 10}  %>
+<%= f.input       :results, label: "Wyniki", as: :text, input_html: {rows: 10} %>
 <%= f.input       :results_file, label: "Plik z wynikami" %>
 <%= f.button      :submit, "Zapisz barwienie", class: "btn btn-info btn-xs" %>
 <% end %>

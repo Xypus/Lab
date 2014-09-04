@@ -43,6 +43,7 @@ class StainingsController < ApplicationController
 
   # GET /stainings/1/edit
   def edit
+    @plate = @staining.plate(params[:id])
   end
 
   # POST /stainings
@@ -69,6 +70,8 @@ class StainingsController < ApplicationController
   # PATCH/PUT /stainings/1
   # PATCH/PUT /stainings/1.json
   def update
+    @plate = @staining.plate
+
     respond_to do |format|
       if @staining.update(staining_params)
         format.html { redirect_to @staining, notice: 'Edycja zakończona powodzeniem.' }
@@ -99,14 +102,12 @@ class StainingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def staining_params
       params.require(:staining).permit(:foetus, :staining_date, :antibodies, 
-        :staining_protocol, :results, :results_file, :culture_id, :protocol_id, :protocol_text,
-        :material_preparation, :plateable_id, :plateable_type, :plate_attributes,
-         :mouse_ids => [])
+        :staining_protocol, :results, :results_file, :culture_id, :protocol_id, 
+        :protocol_text,
+        :material_preparation, :mouse_ids => [])
     end
 
     def plate_params
-      #raise params[:plate_attributes]
-      params.require(:staining).permit(:plate => [:p1, :p2, :p3])
-
+      params.require(:staining).permit(:plate => [:p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8, :plate_number])
     end
 end

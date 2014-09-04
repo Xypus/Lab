@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904131130) do
+ActiveRecord::Schema.define(version: 20140904200505) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140904131130) do
     t.datetime "updated_at"
     t.integer  "plateable_id"
     t.string   "plateable_type"
+    t.string   "plate_number"
   end
 
   create_table "protocols", force: true do |t|
