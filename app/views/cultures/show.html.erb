@@ -24,6 +24,28 @@
             <td><strong>Warunki hodowli:</strong></td>
             <td><%= @culture.culture_details %></td>
           </tr>
+            <tr>
+            <td><strong>Płytka</strong></td>
+              <td>
+                <table class="table table-striped table-bordered">
+                  <tbody>
+                    <tr>
+                      <td rowspan="2">NUMER<%= @culture.plate.try(:plate_number) %></td>
+                      <td>P1 <%= @culture.plate.try(:p1) %></td>
+                      <td>P2 <%= @culture.plate.try(:p2) %></td>
+                      <td>P3 <%= @culture.plate.try(:p3) %></td>
+                      <td>P4 <%= @culture.plate.try(:p4) %></td>
+                    </tr>
+                    <tr>
+                      <td>P5 <%= @culture.plate.try(:p5) %></td>
+                      <td>P6 <%= @culture.plate.try(:p6) %></td>
+                      <td>P7 <%= @culture.plate.try(:p7) %></td>
+                      <td>P8 <%= @culture.plate.try(:p8) %></td>
+                    <tr>
+                  </tbody>
+                </table>
+              </td>
+          </tr>
         </tbody>
       </table>
     </div>

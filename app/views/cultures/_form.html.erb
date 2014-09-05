@@ -3,7 +3,25 @@
 <%= f.input :starting_date, label: "Data rozpoczęcia" %>
 <%= f.input :termination_date, label: "Data zakończenia" %>
 <%= f.input :culture_details, label: "Warunki hodowli", as: :text %>
-
+<table class="table table-striped table-bordered">
+  <tbody>
+    <tr>
+      <%= f.simple_fields_for @plate do |p| %>
+      <td rowspan="2"><%= p.input :plate_number, label: "Numer płytki" %></td>
+      <td><%= p.input :p1, label: "p1" %></td>
+      <td><%= p.input :p2, label: "p2" %></td>
+      <td><%= p.input :p3, label: "p3" %></td>
+      <td><%= p.input :p4, label: "p4" %></td>
+    </tr>
+    <tr>
+      <td><%= p.input :p5, label: "p5" %></td>
+      <td><%= p.input :p6, label: "p6" %></td>
+      <td><%= p.input :p7, label: "p7" %></td>
+      <td><%= p.input :p8, label: "p8" %></td>
+      <% end %>
+    <tr>
+  </tbody>
+</table>
 <%= f.button :submit, "Zapisz hodowlę", class: "btn btn-info btn-xs" %>
 <% end %>
 

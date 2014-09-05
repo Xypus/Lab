@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904200505) do
+ActiveRecord::Schema.define(version: 20140905101229) do
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -69,8 +69,6 @@ ActiveRecord::Schema.define(version: 20140904200505) do
   create_table "stainings", force: true do |t|
     t.string   "foetus"
     t.string   "staining_date"
-    t.string   "antibodies"
-    t.text     "staining_protocol"
     t.string   "results"
     t.string   "results_file"
     t.datetime "created_at"
