@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,3 +44,6 @@ gem 'simple_form', '~>3.1.0.rc1'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'rspec-rails'
+gem 'capybara'
+gem 'selenium-webdriver', '>=2.35.1'

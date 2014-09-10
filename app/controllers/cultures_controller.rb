@@ -82,7 +82,7 @@ class CulturesController < ApplicationController
     end
 
     def plate_params
-      params.require(:staining).permit(:plate => [:p1, :p2, :p3, :p4, :p5, :p6, 
+      params.require(:culture).permit(:plate => [:p1, :p2, :p3, :p4, :p5, :p6, 
         :p7, :p8, :plate_number])
     end
 end
