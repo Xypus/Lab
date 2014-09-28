@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :protocols
+  resources :protocols, :cultures, :mice
 
   resources :stainings do
     member do
@@ -7,9 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cultures
 
-  resources :mice
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
