@@ -15,3 +15,7 @@
 //= require_tree .
 
 //= require bootstrap-sprockets
+//= require bootstrap-multiselect.js
+
+
+

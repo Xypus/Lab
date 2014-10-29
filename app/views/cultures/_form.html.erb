@@ -1,5 +1,6 @@
+
 <%= simple_form_for @culture do |f| %>
-<%= f.association :mice, label_method: :number, value_method: :id, label: "Numery myszy", hint: "Wciśnij ctrl, aby wybrać więcej niż jedną mysz" %>
+<%= f.association :mice, label_method: :number, value_method: :id, label: "Numery myszy" %>
 <%= f.input :starting_date, label: "Data rozpoczęcia" %>
 <%= f.input :termination_date, label: "Data zakończenia" %>
 <%= f.input :culture_details, label: "Warunki hodowli", as: :text %>

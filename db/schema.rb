@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905101229) do
+ActiveRecord::Schema.define(version: 20141021183135) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "cultures", force: true do |t|
     t.string   "starting_date"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140905101229) do
     t.integer  "number"
     t.string   "mating_date"
     t.decimal  "dpc"
-    t.integer  "somites",     limit: 255
+    t.integer  "somites"
     t.string   "experiments"
     t.text     "notes"
     t.datetime "created_at"
@@ -34,14 +37,9 @@ ActiveRecord::Schema.define(version: 20140905101229) do
   end
 
   create_table "mouse_stainings", force: true do |t|
-    t.integer  "mouse_id"
-    t.integer  "staining_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "mouse_id"
+    t.integer "staining_id"
   end
-
-  add_index "mouse_stainings", ["mouse_id"], name: "index_mouse_stainings_on_mouse_id"
-  add_index "mouse_stainings", ["staining_id"], name: "index_mouse_stainings_on_staining_id"
 
   create_table "plates", force: true do |t|
     t.string   "p1"

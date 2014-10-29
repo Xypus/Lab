@@ -9,5 +9,5 @@ class Staining < ActiveRecord::Base
   has_one :plate, as: :plateable
   accepts_nested_attributes_for :plate
   
-  #validates :staining_date, :protocol_text, presence: true #mouse_number, protocol_title
+  validates :staining_date, :protocol_text, presence: true
 end

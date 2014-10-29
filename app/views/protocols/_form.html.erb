@@ -1,5 +1,8 @@
+<p><strong>Pola oznaczone gwiazdką są wymagane.</strong></p>
 <%= simple_form_for @protocol do |f| %>
 <%= f.input :title, label: "Tytuł" %>
-<%= f.input :content, label: "Treść" %>
+<div class="form-group">
+<%= f.input :content, label: "Treść", input_html: {rows: "10"}%>
+</div>
 <%= f.button :submit, "Zapisz protokół", class: "btn btn-info btn-xs" %>
 <% end %>

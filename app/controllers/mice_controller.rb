@@ -28,7 +28,7 @@ class MiceController < ApplicationController
 
     respond_to do |format|
       if @mouse.save
-        format.html { redirect_to @mouse, notice: 'Mouse was successfully created.' }
+        format.html { redirect_to @mouse, notice: 'Mysz została poprawnie zapisana' }
         format.json { render :show, status: :created, location: @mouse }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class MiceController < ApplicationController
   def update
     respond_to do |format|
       if @mouse.update(mouse_params)
-        format.html { redirect_to @mouse, notice: 'Mouse was successfully updated.' }
+        format.html { redirect_to @mouse, notice: 'Mysz została poprawnie zapisana' }
         format.json { render :show, status: :ok, location: @mouse }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class MiceController < ApplicationController
   def destroy
     @mouse.destroy
     respond_to do |format|
-      format.html { redirect_to mice_url, notice: 'Mouse was successfully destroyed.' }
+      format.html { redirect_to mice_url, notice: 'Mysz została usunięta' }
       format.json { head :no_content }
     end
   end
