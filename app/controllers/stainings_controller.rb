@@ -1,14 +1,10 @@
 class StainingsController < ApplicationController
   before_action :set_staining, only: [:show, :edit, :update, :destroy]
 
-  # GET /stainings
-  # GET /stainings.json
   def index
     @stainings = Staining.all
   end
 
-  # GET /stainings/1
-  # GET /stainings/1.json
   def show
     @staining = Staining.find(params[:id])
     respond_to do |format|
@@ -25,8 +21,8 @@ class StainingsController < ApplicationController
 
   def download
     @staining = Staining.find(params[:id])
-    html = render_to_string(:action => :show, 
-      :layout   => "pdf_layout.html", 
+    html = render_to_string(:action => :show,
+      :layout   => "pdf_layout.html",
       :template => "stainings/show.pdf.erb")
     pdf = WickedPdf.new.pdf_from_string(html)
     send_data(pdf,
@@ -34,20 +30,16 @@ class StainingsController < ApplicationController
     :disposition => 'attachment')
   end
 
-  # GET /stainings/new
   def new
     @staining = Staining.new
     @protocols = Protocol.all.map { |p| [p.id, p.content]}.to_h
     @plate = @staining.build_plate
   end
 
-  # GET /stainings/1/edit
   def edit
     @plate = @staining.plate
   end
 
-  # POST /stainings
-  # POST /stainings.json
   def create
     Staining.transaction do
       @staining = Staining.new(staining_params)
@@ -67,11 +59,8 @@ class StainingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /stainings/1
-  # PATCH/PUT /stainings/1.json
   def update
-    #raise plate_params[:plate].inspect
-    @plate =  @staining.plate 
+    @plate =  @staining.plate
     respond_to do |format|
       if @staining.update(staining_params)
         @plate.update(plate_params[:plate])
@@ -84,8 +73,6 @@ class StainingsController < ApplicationController
     end
   end
 
-  # DELETE /stainings/1
-  # DELETE /stainings/1.json
   def destroy
     @staining.destroy
     respond_to do |format|
@@ -95,21 +82,20 @@ class StainingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_staining
-      @staining = Staining.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def staining_params
-      params.require(:staining).permit(:foetus, :staining_date, 
-        :staining_protocol, :results, :results_file, :culture_id, :protocol_id, 
-        :protocol_text,
-        :material_preparation, mouse_ids: [])
-    end
+  def set_staining
+    @staining = Staining.find(params[:id])
+  end
 
-    def plate_params
-      params.require(:staining).permit(:plate => [:p1, :p2, :p3, :p4, :p5, :p6, 
-        :p7, :p8, :plate_number])
-    end
+  def staining_params
+    params.require(:staining).permit(:foetus, :staining_date,
+      :staining_protocol, :results, :results_file, :culture_id, :protocol_id,
+      :protocol_text,
+      :material_preparation, mouse_ids: [])
+  end
+
+  def plate_params
+    params.require(:staining).permit(:plate => [:p1, :p2, :p3, :p4, :p5, :p6,
+      :p7, :p8, :plate_number])
+  end
 end

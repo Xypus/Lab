@@ -1,28 +1,15 @@
 class MiceController < ApplicationController
   before_action :set_mouse, only: [:show, :edit, :update, :destroy]
 
-  # GET /mice
-  # GET /mice.json
   def index
     @mice = Mouse.all.order("number DESC")
   end
 
-  # GET /mice/1
-  # GET /mice/1.json
-  def show
-  end
 
-  # GET /mice/new
   def new
     @mouse = Mouse.new
   end
 
-  # GET /mice/1/edit
-  def edit
-  end
-
-  # POST /mice
-  # POST /mice.json
   def create
     @mouse = Mouse.new(mouse_params)
 
@@ -37,8 +24,6 @@ class MiceController < ApplicationController
     end
   end
 
-  # PATCH/PUT /mice/1
-  # PATCH/PUT /mice/1.json
   def update
     respond_to do |format|
       if @mouse.update(mouse_params)
@@ -51,8 +36,6 @@ class MiceController < ApplicationController
     end
   end
 
-  # DELETE /mice/1
-  # DELETE /mice/1.json
   def destroy
     @mouse.destroy
     respond_to do |format|
@@ -62,13 +45,12 @@ class MiceController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mouse
-      @mouse = Mouse.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def mouse_params
-      params.require(:mouse).permit(:number, :mating_date, :dpc, :somites, :experiments, :notes, :belongs_to)
-    end
+  def set_mouse
+    @mouse = Mouse.find(params[:id])
+  end
+
+  def mouse_params
+    params.require(:mouse).permit(:number, :mating_date, :dpc, :somites, :experiments, :notes, :belongs_to)
+  end
 end
